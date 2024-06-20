@@ -1,32 +1,44 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
-int main() {
-    char filename[256];
-    cout << "Ingrese el nombre del fichero: ";
-    cin >> filename;
+void mostrarArchivoPorPantalla(const string& nombreArchivo) {
+    ifstream archivo(nombreArchivo);  // Abrir el archivo
 
-    ifstream file(filename);
-    if (!file.is_open()) {
-        cerr << "No se pudo abrir el fichero " << filename << endl;
-        return 1;
+    if (!archivo.is_open()) {
+        cerr << "No se pudo abrir el archivo " << nombreArchivo << endl;
+        return;
     }
 
-    char line[256];
-    int line_count = 0;
-    const int lines_per_page = 25;
+    string linea;
+    int contadorLineas = 0;
 
-    while (file.getline(line, 256)) {
-        cout << line << endl;
-        line_count++;
-        if (line_count % lines_per_page == 0) {
-            cout << "Pulse Enter para continuar...";
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    // Leer y mostrar el archivo línea por línea
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+        ++contadorLineas;
+
+        // Pausa cada 25 líneas
+        if (contadorLineas % 25 == 0) {
+            cout << "Presiona Enter para mostrar las siguientes 25 líneas..." << endl;
+            cin.get();  // Esperar a que el usuario presione Enter
         }
     }
 
-    file.close();
+    archivo.close();  // Cerrar el archivo al finalizar
+}
+
+int main() {
+    string nombreArchivo;
+
+    // Pedir al usuario el nombre del archivo
+    cout << "Ingrese el nombre del archivo: ";
+    getline(cin, nombreArchivo);
+
+    // Mostrar el contenido del archivo
+    mostrarArchivoPorPantalla(nombreArchivo);
+
     return 0;
 }
