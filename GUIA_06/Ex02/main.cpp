@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstdlib> // Para std::system
 using namespace std;
 
 struct Tdato {
@@ -10,19 +11,45 @@ struct Tdato {
 int main() {
     int x = 0; // Inicializamos x
     double f = 0.0; // Inicialimos f
-    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}; // Agregamos valore al arreglo
-    char nombre[] = "Ejercicios ficheros binarios"; //Definimos una frase en un arreglo de caracteres
-    Tdato p = {0, ""}; // Inicialimos la estructura (Tdato)
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}; // Agregamos valores al arreglo
+    char nombre[] = "Ejercicios ficheros binarios"; // Definimos una frase en un arreglo de caracteres
+    Tdato p = {0, ""}; // Inicializamos la estructura (Tdato)
     
     ifstream f1;
     ofstream f2;
-   
-    f1.open("entrada.dat", ios::binary);
-    f2.open("salida.dat", ios::binary);
-   
-    if (!f1.is_open() || !f2.is_open()) {
-        cerr << "Error al abrir los ficheros" << endl;
+
+    // Imprimir el directorio de trabajo actual para depuración
+    cout << "Directorio de trabajo actual: ";
+    system("pwd");
+
+    // Verificar si entrada.dat existe y sus permisos
+    cout << "Verificando existencia y permisos del archivo entrada.dat" << endl;
+    ifstream testFile("entrada.dat");
+    if (!testFile) {
+        cerr << "El fichero entrada.dat no existe o no se puede leer." << endl;
         return 1;
+    } else {
+        cout << "El fichero entrada.dat existe y es accesible." << endl;
+    }
+    testFile.close();
+   
+    // Intentar abrir los archivos
+    cout << "Intentando abrir el archivo entrada.dat para lectura." << endl;
+    f1.open("entrada.dat", ios::binary);
+    if (!f1.is_open()) {
+        cerr << "Error al abrir el fichero entrada.dat" << endl;
+        return 1;
+    } else {
+        cout << "Archivo entrada.dat abierto exitosamente para lectura." << endl;
+    }
+
+    cout << "Intentando abrir el archivo salida.dat para escritura." << endl;
+    f2.open("salida.dat", ios::binary);
+    if (!f2.is_open()) {
+        cerr << "Error al abrir el fichero salida.dat" << endl;
+        return 1;
+    } else {
+        cout << "Archivo salida.dat abierto exitosamente para escritura." << endl;
     }
    
     // Escribimos datos en el fichero salida.dat
@@ -33,6 +60,7 @@ int main() {
     f2.write(reinterpret_cast<const char*>(&p), sizeof(p));
    
     f2.close();
+    cout << "Datos escritos en el archivo salida.dat." << endl;
    
     // Leer datos del fichero entrada.dat
     f1.read(reinterpret_cast<char*>(&x), sizeof(x));
@@ -52,6 +80,7 @@ int main() {
     if (f1.gcount() != sizeof(p)) cerr << "Error al leer p" << endl;
    
     f1.close();
+    cout << "Lectura de datos desde el archivo entrada.dat completada." << endl;
    
     return 0;
 }
