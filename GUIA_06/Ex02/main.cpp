@@ -10,8 +10,8 @@ struct Tdato {
 int main() {
     int x = 0; // Inicializamos x
     double f = 0.0; // Inicialimos f
-    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-    char nombre[] = "Ejercicios ficheros binarios";
+    int a[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}; // Agregamos valore al arreglo
+    char nombre[] = "Ejercicios ficheros binarios"; //Definimos una frase en un arreglo de caracteres
     Tdato p = {0, ""}; // Inicialimos la estructura (Tdato)
     
     ifstream f1;
