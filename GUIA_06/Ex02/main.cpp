@@ -81,6 +81,19 @@ int main() {
    
     f1.close();
     cout << "Lectura de datos desde el archivo entrada.dat completada." << endl;
-   
+
+    // Imprimir los datos leídos
+    cout << "\nDatos leídos desde entrada.dat:" << endl;
+    cout << "x: " << x << endl;
+    cout << "f: " << f << endl;
+    cout << "a: ";
+    for (int i = 0; i < 5; ++i) { // Solo las primeras 5 posiciones de a
+        cout << a[i] << " ";
+    }
+    cout << endl;
+    cout << "nombre: " << nombre << endl;
+    cout << "p.b: " << p.b << endl;
+    cout << "p.s: " << p.s << endl;
+
     return 0;
 }
