@@ -1,0 +1,3 @@
+H:/v - is/PS/LAB_PS/PSTeo-A/PROYECTO/cmake-build-debug/CMakeFiles/PROYECTO.dir
+H:/v - is/PS/LAB_PS/PSTeo-A/PROYECTO/cmake-build-debug/CMakeFiles/edit_cache.dir
+H:/v - is/PS/LAB_PS/PSTeo-A/PROYECTO/cmake-build-debug/CMakeFiles/rebuild_cache.dir

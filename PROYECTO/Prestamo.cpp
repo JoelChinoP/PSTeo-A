@@ -1,5 +1,5 @@
 
-
+#include "algorithm"
 #include "Prestamo.h"
 
 void establecerPrestamo(vector<Prestamo> &prestamos)

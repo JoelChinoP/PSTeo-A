@@ -43,11 +43,11 @@ int main() {
     while (true) {
         try {
             cout << "Ingrese la ruta del fichero de entrada: ";
-            cin >> inputFilePath;
+            getline(cin, inputFilePath);
             readFile(inputFilePath);
             break; // Salir del bucle si la lectura es exitosa
         } catch (const InputException& e) {
-            cout << "Excepción capturada: " << e.getMessage() << endl;
+            cout << "Excepcion capturada: " << e.getMessage() << endl;
             // Volver a pedir la ruta del fichero
         }
     }
@@ -56,10 +56,11 @@ int main() {
     try {
         process();
     } catch (const ProcessorException& e) {
-        cout << "Excepción capturada: " << e.getMessage() << endl;
+        cout << "Excepcion capturada: " << e.getMessage() << endl;
         // Terminar el programa de forma ordenada
         return 1;
     }
+
 
     // Intentar escribir el fichero de salida
     while (true) {
@@ -69,7 +70,7 @@ int main() {
             writeFile(outputFilePath);
             break; // Salir del bucle si la escritura es exitosa
         } catch (const OutputException& e) {
-            cout << "Excepción capturada: " << e.getMessage() << endl;
+            cout << "Excepcion capturada: " << e.getMessage() << endl;
             // Volver a pedir la ruta del fichero
         }
     }

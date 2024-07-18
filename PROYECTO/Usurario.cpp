@@ -1,4 +1,5 @@
 #include "Usuario.h"
+#include "algorithm"
 
 void agregarUsuario(vector<Usuario> &usuarios)
 {

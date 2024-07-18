@@ -1,4 +1,5 @@
 #include "Registro.h"
+#include "algorithm"
 
 void agregarRegistro(vector<Registro> &registros)
 {
