@@ -1,0 +1,101 @@
+100,Cien años de soledad,Gabriel García Márquez,1967,19.99
+101,Orgullo y prejuicio,Jane Austen,1813,14.95
+102,1984,George Orwell,1949,17.00
+103,El señor de los anillos,J.R.R. Tolkien,1954,25.99
+104,Matar a un ruiseñor,Harper Lee,1960,18.99
+105,Don Quijote de la Mancha,Miguel de Cervantes,1605,22.50
+106,El gran Gatsby,F. Scott Fitzgerald,1925,15.95
+107,Crimen y castigo,Fiódor Dostoyevski,1866,20.00
+108,En busca del tiempo perdido,Marcel Proust,1913,23.75
+109,Ulises,James Joyce,1922,19.50
+110,La Odisea,Homero,800 a.C.,13.99
+111,La Iliada,Homero,750 a.C.,13.99
+112,Los hermanos Karamazov,Fiódor Dostoyevski,1880,21.00
+113,Las mil y una noches,Anónimo,1704,18.50
+114,Madame Bovary,Gustave Flaubert,1857,16.99
+115,El retrato de Dorian Gray,Oscar Wilde,1890,14.00
+116,Alicia en el País de las Maravillas,Lewis Carroll,1865,12.50
+117,El proceso,Franz Kafka,1925,15.50
+118,El guardián entre el centeno,J.D. Salinger,1951,17.50
+119,La metamorfosis,Franz Kafka,1915,11.75
+120,Fahrenheit 451,Ray Bradbury,1953,14.50
+121,La divina comedia,Dante Alighieri,1320,20.99
+122,El viejo y el mar,Ernest Hemingway,1952,13.75
+123,El extranjero,Albert Camus,1942,14.99
+124,Rebelión en la granja,George Orwell,1945,13.25
+125,Los miserables,Victor Hugo,1862,18.99
+126,La sombra del viento,Carlos Ruiz Zafón,2001,16.95
+127,La casa de los espíritus,Isabel Allende,1982,14.95
+128,El amor en los tiempos del cólera,Gabriel García Márquez,1985,15.99
+129,El nombre de la rosa,Umberto Eco,1980,17.99
+130,La montaña mágica,Thomas Mann,1924,21.75
+131,La náusea,Jean-Paul Sartre,1938,13.50
+132,La insoportable levedad del ser,Milan Kundera,1984,18.25
+133,La peste,Albert Camus,1947,16.75
+134,Siddhartha,Hermann Hesse,1922,12.75
+135,Demian,Hermann Hesse,1919,13.25
+136,El Principito,Antoine de Saint-Exupéry,1943,11.50
+137,El alquimista,Paulo Coelho,1988,14.50
+138,El conde de Montecristo,Alexandre Dumas,1844,22.99
+139,Drácula,Bram Stoker,1897,15.25
+140,Frankenstein,Mary Shelley,1818,14.75
+141,El lobo estepario,Hermann Hesse,1927,15.95
+142,Un mundo feliz,Aldous Huxley,1932,16.50
+143,La insoportable levedad del ser,Milan Kundera,1984,18.25
+144,Los pilares de la tierra,Ken Follett,1989,21.99
+145,La catedral del mar,Ildefonso Falcones,2006,19.75
+146,Donde los árboles cantan,Laura Gallego,2011,17.50
+147,El perfume,Patrick Süskind,1985,15.50
+148,El juego del ángel,Carlos Ruiz Zafón,2008,16.75
+149,El caballero de la armadura oxidada,Robert Fisher,1987,12.99
+150,Las aventuras de Huckleberry Finn,Mark Twain,1884,14.00
+151,Las aventuras de Tom Sawyer,Mark Twain,1876,13.50
+152,Viaje al centro de la tierra,Jules Verne,1864,15.25
+153,Veinte mil leguas de viaje submarino,Jules Verne,1870,16.00
+154,La vuelta al mundo en ochenta días,Jules Verne,1873,14.50
+155,La isla del tesoro,Robert Louis Stevenson,1883,13.75
+156,Robinson Crusoe,Daniel Defoe,1719,15.00
+157,Moby Dick,Herman Melville,1851,17.50
+158,El hombre invisible,H.G. Wells,1897,14.25
+159,La guerra de los mundos,H.G. Wells,1898,15.75
+160,La máquina del tiempo,H.G. Wells,1895,14.00
+161,Crónicas marcianas,Ray Bradbury,1950,16.25
+162,El hombre en el castillo,Philip K. Dick,1962,15.50
+163,Neuromante,William Gibson,1984,14.75
+164,Dune,Frank Herbert,1965,18.99
+165,El fin de la infancia,Arthur C. Clarke,1953,17.00
+166,Fundación,Isaac Asimov,1951,19.50
+167,Yo robot,Isaac Asimov,1950,16.99
+168,El juego de Ender,Orson Scott Card,1985,17.99
+169,La naranja mecánica,Anthony Burgess,1962,15.25
+170,El guardián entre el centeno,J.D. Salinger,1951,17.50
+171,En el camino,Jack Kerouac,1957,14.99
+172,La campana de cristal,Sylvia Plath,1963,16.25
+173,Las uvas de la ira,John Steinbeck,1939,18.75
+174,De ratones y hombres,John Steinbeck,1937,15.50
+175,La perla,John Steinbeck,1947,13.75
+176,El tambor de hojalata,Günter Grass,1959,17.50
+177,El barón rampante,Italo Calvino,1957,14.75
+178,El vizconde demediado,Italo Calvino,1952,13.50
+179,El caballero inexistente,Italo Calvino,1959,14.25
+180,La tregua,Mario Benedetti,1960,13.75
+181,El túnel,Ernesto Sabato,1948,15.00
+182,Sobre héroes y tumbas,Ernesto Sabato,1961,16.25
+183,Rayuela,Julio Cortázar,1963,18.50
+184,El libro de arena,Jorge Luis Borges,1975,14.50
+185,Ficciones,Jorge Luis Borges,1944,16.75
+186,El Aleph,Jorge Luis Borges,1949,15.75
+187,Pedro Páramo,Juan Rulfo,1955,14.25
+188,La ciudad y los perros,Mario Vargas Llosa,1963,16.50
+189,Conversación en la catedral,Mario Vargas Llosa,1969,18.75
+190,La tía Julia y el escribidor,Mario Vargas Llosa,1977,15.25
+191,La casa verde,Mario Vargas Llosa,1966,17.50
+192,El amor en los tiempos del cólera,Gabriel García Márquez,1985,15.99
+193,Del amor y otros demonios,Gabriel García Márquez,1994,14.75
+194,Crónica de una muerte anunciada,Gabriel García Márquez,1981,13.99
+195,El otoño del patriarca,Gabriel García Márquez,1975,15.25
+196,Los funerales de la Mamá Grande,Gabriel García Márquez,1962,14.50
+197,Relato de un náufrago,Gabriel García Márquez,1970,13.75
+198,Memoria de mis putas tristes,Gabriel García Márquez,2004,12.99
+199,El coronel no tiene quien le escriba,Gabriel García Márquez,1961,14.00
+200,Doce cuentos peregrinos,Gabriel García Márquez,1992,15.50

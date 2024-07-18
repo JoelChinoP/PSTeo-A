@@ -1,10 +1,16 @@
 #include "Registro.h"
 #include "algorithm"
 
+#include <iostream>
+#include <vector>
+#include <iomanip>
+
+using namespace std;
+
 void agregarRegistro(vector<Registro> &registros)
 {
     Registro r;
-    cout << "Ingrese el código: ";
+    cout << "\nIngrese el código: ";
     cin >> r.codigo;
     cout << "Ingrese el nombre: ";
     cin.ignore();
@@ -23,7 +29,7 @@ void agregarRegistro(vector<Registro> &registros)
 void eliminarRegistro(vector<Registro> &registros)
 {
     int codigo;
-    cout << "Ingrese el código del registro a eliminar: ";
+    cout << "\nIngrese el código del registro a eliminar: ";
     cin >> codigo;
 
     auto it = remove_if(registros.begin(), registros.end(), [&](Registro &r)
@@ -42,7 +48,7 @@ void eliminarRegistro(vector<Registro> &registros)
 void buscarRegistro(const vector<Registro> &registros)
 {
     int codigo;
-    cout << "Ingrese el código del registro a buscar: ";
+    cout << "\nIngrese el código del registro a buscar: ";
     cin >> codigo;
 
     auto it = find_if(registros.begin(), registros.end(), [&](const Registro &r)
@@ -64,7 +70,7 @@ void buscarRegistro(const vector<Registro> &registros)
 void actualizarRegistro(vector<Registro> &registros)
 {
     int codigo;
-    cout << "Ingrese el código del registro a actualizar: ";
+    cout << "\nIngrese el código del registro a actualizar: ";
     cin >> codigo;
 
     auto it = find_if(registros.begin(), registros.end(), [&](Registro &r)
@@ -91,13 +97,32 @@ void actualizarRegistro(vector<Registro> &registros)
 
 void listarRegistros(const vector<Registro> &registros)
 {
+    const int anchoCodigo = 7;
+    const int anchoNombre = 40;
+    const int anchoAutor = 35;
+    const int anchoAnio = 15;
+    const int anchoPrecio = 10;
+
+    // Imprimir cabecera
+    cout << "\n" << endl;
+    cout << left << setw(anchoCodigo) << "Código" 
+         << left << setw(anchoNombre) << "     Nombre"
+         << left << setw(anchoAutor) << "     Autor"
+         << left << setw(anchoAnio) << "Publicación"
+         << left << setw(anchoPrecio) << "Precio" << endl;
+
+    // Imprimir línea de separación
+    cout << string(anchoCodigo + anchoNombre + anchoAutor + anchoAnio + anchoPrecio, '-') << endl;
+
+    // Imprimir registros
     for (const auto &r : registros)
     {
-        cout << "Código: " << r.codigo << endl;
-        cout << "Nombre: " << r.nombre << endl;
-        cout << "Autor: " << r.autor << endl;
-        cout << "Año de Publicación: " << r.anioPublicacion << endl;
-        cout << "Precio: " << r.precio << endl;
-        cout << "---------------------------" << endl;
+        cout << left << setw(anchoCodigo) << r.codigo
+             << left << setw(anchoNombre) << r.nombre
+             << left << setw(anchoAutor) << r.autor
+             << left << setw(anchoAnio) << r.anioPublicacion
+             << left << setw(anchoPrecio) << fixed << setprecision(2) << r.precio << endl;
     }
+    cout << string(anchoCodigo + anchoNombre + anchoAutor + anchoAnio + anchoPrecio, '-') << endl;
+    cout << "" << endl;
 }

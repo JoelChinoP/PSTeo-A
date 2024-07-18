@@ -8,7 +8,7 @@
 using namespace std;
 
 void showMenu() {
-    cout << "1. Agregar Registro" << endl;
+    cout << "\n1. Agregar Registro" << endl;
     cout << "2. Eliminar Registro" << endl;
     cout << "3. Buscar Registro" << endl;
     cout << "4. Actualizar Registro" << endl;
@@ -32,7 +32,7 @@ int main() {
     int choice;
     do {
         showMenu();
-        cout << "Ingrese una opción: ";
+        cout << "\nIngrese una opción: ";
         cin >> choice;
 
         try {
@@ -77,10 +77,10 @@ int main() {
                     listarPrestamos(prestamos);
                     break;
                 case 0:
-                    cout << "Saliendo..." << endl;
+                    cout << "\nSaliendo..." << endl;
                     break;
                 default:
-                    cout << "Opción no válida" << endl;
+                    cout << "\nOpción no válida" << endl;
                     break;
             }
         } catch (const FileException& e) {

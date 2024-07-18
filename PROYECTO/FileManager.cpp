@@ -1,13 +1,17 @@
 #include "FileManager.h"
 #include <fstream>
 #include <stdexcept>
+#include <iostream>
+#include <sstream>
+
+using namespace std;
 
 void guardarRegistrosEnFichero(const vector<Registro> &registros)
 {
-    ofstream outFile("registros.txt");
+    ofstream outFile("registros.txt", ios::app); // Abre el archivo en modo append
     if (!outFile)
     {
-        throw FileException("Error al abrir el fichero para guardar registros");
+        throw FileException("\nError al abrir el fichero para guardar registros");
     }
 
     for (const auto &r : registros)
@@ -16,12 +20,12 @@ void guardarRegistrosEnFichero(const vector<Registro> &registros)
     }
 
     outFile.close();
-    cout << "Registros guardados exitosamente en registros.txt!" << endl;
+    cout << "\nRegistros añadidos exitosamente" << endl;
 }
 
 void cargarRegistrosDesdeFichero(vector<Registro> &registros)
 {
-    cout<<"gaaa"<<endl;
+    cout << "\nIniciando carga de registros..." << endl;
     ifstream inFile("registros.txt");
     if (!inFile)
     {
@@ -29,15 +33,27 @@ void cargarRegistrosDesdeFichero(vector<Registro> &registros)
     }
 
     registros.clear();
-    Registro r;
-    char delim;
-    while (inFile >> r.codigo >> delim >> r.nombre >> delim >> r.autor >> delim >> r.anioPublicacion >> delim >> r.precio)
+    string line;
+    while (getline(inFile, line))
     {
+        stringstream ss(line);
+        Registro r;
+        string temp;
+
+        getline(ss, temp, ',');
+        r.codigo = stoi(temp);
+        getline(ss, r.nombre, ',');
+        getline(ss, r.autor, ',');
+        getline(ss, temp, ',');
+        r.anioPublicacion = stoi(temp);
+        getline(ss, temp, ',');
+        r.precio = stod(temp);
+
         registros.push_back(r);
     }
 
     inFile.close();
-    cout << "Registros cargados exitosamente desde registros.txt!" << endl;
+    cout << "Registros cargados exitosamente..." << endl;
 }
 void guardarUsuariosEnFichero(const vector<Usuario> &usuarios)
 {
