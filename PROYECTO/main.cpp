@@ -26,8 +26,8 @@ void showMenu() {
 
 int main() {
     vector<Registro> registros;
-    vector<Usuario> usuarios;
-    vector<Prestamo> prestamos;
+    vector<Usuario> usuarios = cargarDatosUsuario();
+    vector<Prestamo> prestamos = cargarDatosPrestamo();
 
     int choice;
     do {
@@ -77,7 +77,9 @@ int main() {
                     listarPrestamos(prestamos);
                     break;
                 case 0:
-                    cout << "\nSaliendo..." << endl;
+                    cout << "\nCerranding..." << endl;
+                    escribirDatosPrestamo(prestamos);
+                    escribirDatosUsuario(usuarios);
                     break;
                 default:
                     cout << "\nOpción no válida" << endl;

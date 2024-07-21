@@ -18,5 +18,7 @@ struct Prestamo
 void establecerPrestamo(vector<Prestamo> &prestamos);
 void establecerDevolucion(vector<Prestamo> &prestamos);
 void listarPrestamos(const vector<Prestamo> &prestamos);
+vector<Prestamo> cargarDatosPrestamo();
+void escribirDatosPrestamo(const vector<Prestamo> &prestamos);
 
 #endif // PRESTAMO_H

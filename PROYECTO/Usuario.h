@@ -18,5 +18,7 @@ struct Usuario
 void agregarUsuario(vector<Usuario> &usuarios);
 void eliminarUsuario(vector<Usuario> &usuarios);
 void listarUsuarios(const vector<Usuario> &usuarios);
+vector<Usuario> cargarDatosUsuario();
+void escribirDatosUsuario(const vector<Usuario> &usuarios);
 
 #endif // USUARIO_H

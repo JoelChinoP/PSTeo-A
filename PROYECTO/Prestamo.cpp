@@ -1,4 +1,3 @@
-
 #include "algorithm"
 #include "Prestamo.h"
 
@@ -6,6 +5,8 @@
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -48,13 +49,14 @@ void establecerDevolucion(vector<Prestamo> &prestamos)
 
 void listarPrestamos(const vector<Prestamo> &prestamos)
 {
-    const int anchoCodigo = 15;
-    const int anchoDNI = 12;
-    const int anchoFechaPrestamo = 15;
-    const int anchoFechaDevolucion = 17;
+    const int anchoCodigo = 20;
+    const int anchoDNI = 20;
+    const int anchoFechaPrestamo = 25;
+    const int anchoFechaDevolucion = 25;
 
     // Imprimir cabecera
-    cout << "\n" << endl;
+    cout << "\n"
+         << endl;
     cout << left << setw(anchoCodigo) << "Código Registro"
          << left << setw(anchoDNI) << "DNI Usuario"
          << left << setw(anchoFechaPrestamo) << "Fecha Préstamo"
@@ -73,4 +75,42 @@ void listarPrestamos(const vector<Prestamo> &prestamos)
     }
     cout << string(anchoCodigo + anchoDNI + anchoFechaPrestamo + anchoFechaDevolucion, '-') << endl;
     cout << "" << endl;
+}
+
+vector<Prestamo> cargarDatosPrestamo()
+{
+    vector<Prestamo> prestamos;
+    ifstream archivo("prestamos.txt");
+    string linea;
+
+    while (getline(archivo, linea))
+    {
+        stringstream ss(linea);
+        string codigoRegistro, dniUsuario, fechaPrestamo, fechaDevolucion;
+
+        getline(ss, codigoRegistro, ',');
+        getline(ss, dniUsuario, ',');
+        getline(ss, fechaPrestamo, ',');
+        getline(ss, fechaDevolucion, ',');
+
+        Prestamo p;
+        p.codigoRegistro = stoi(codigoRegistro);
+        p.dniUsuario = stoi(dniUsuario);
+        p.fechaPrestamo = fechaPrestamo;
+        p.fechaDevolucion = fechaDevolucion;
+
+        prestamos.push_back(p);
+    }
+    archivo.close();
+    return prestamos;
+}
+
+void escribirDatosPrestamo(const vector<Prestamo> &prestamos)
+{
+    ofstream archivo("prestamos.txt");
+    for (const auto &p : prestamos)
+    {
+        archivo << p.codigoRegistro << "," << p.dniUsuario << "," << p.fechaPrestamo << "," << p.fechaDevolucion << endl;
+    }
+    archivo.close();
 }

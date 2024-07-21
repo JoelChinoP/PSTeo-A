@@ -1,10 +1,11 @@
 #include "Usuario.h"
 #include "algorithm"
-
 #include <iostream>
 #include <vector>
 #include <string>
 #include <iomanip>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -52,7 +53,8 @@ void listarUsuarios(const vector<Usuario> &usuarios)
     const int anchoTelefono = 15;
 
     // Imprimir cabecera
-    cout << "\n" << endl;
+    cout << "\n"
+         << endl;
     cout << left << setw(anchoDNI) << "DNI"
          << left << setw(anchoNombre) << "Nombre"
          << left << setw(anchoEmail) << "Email"
@@ -71,4 +73,42 @@ void listarUsuarios(const vector<Usuario> &usuarios)
     }
     cout << string(anchoDNI + anchoNombre + anchoEmail + anchoTelefono, '-') << endl;
     cout << "" << endl;
+}
+
+vector<Usuario> cargarDatosUsuario()
+{
+    vector<Usuario> usuarios;
+    ifstream archivo("usuarios.txt");
+    string linea;
+
+    while (getline(archivo, linea))
+    {
+        stringstream ss(linea);
+        string dni, nombre, email, telefono;
+
+        getline(ss, dni, ',');
+        getline(ss, nombre, ',');
+        getline(ss, email, ',');
+        getline(ss, telefono, ',');
+
+        Usuario u;
+        u.dni = stoi(dni);
+        u.nombre = nombre;
+        u.email = email;
+        u.telefono = telefono;
+
+        usuarios.push_back(u);
+    }
+    archivo.close();
+    return usuarios;
+}
+
+void escribirDatosUsuario(const vector<Usuario> &usuarios)
+{
+    ofstream archivo("usuarios.txt");
+    for (const auto &u : usuarios)
+    {
+        archivo << u.dni << "," << u.nombre << "," << u.email << "," << u.telefono << endl;
+    }
+    archivo.close();
 }
